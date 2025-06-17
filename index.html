@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Интернет-магазин электротехники</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>Фиксикс</h1>
+    <nav>
+        <ul>
+            <li><a href="#catalog">Каталог</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li><a href="cart.html">Корзина</a></li>
+            <li><a href="register.html" class="register">Зарегистрироваться</a></li>
+            <li><a href="login.html" class="login">Войти</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Лучшие товары для электриков и любителей</h2>
+    <p>Большой выбор инструментов и электрооборудования по выгодным ценам!</p>
+</section>
+
+<section id="catalog" class="products">
+    <h2>Каталог товаров</h2>
+    <div class="product-list">
+
+        <div class="product-card">
+            <div class="slider">
+
+                <div class="prev" onclick="changeSlide(1,-1)">&#10094;</div>
+                <div class="next" onclick="changeSlide(1,1)">&#10095;</div>
+
+                <div class="slides" id="slides-1">
+
+                    <div class="slide">
+                        <img src="png/1.webp" alt="Фото1" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/2.webp" alt="Фото2" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/3.webp" alt="Фото3" />
+                    </div>
+
+                </div>
+            </div>
+            <h3>Отвертка электрическая</h3>
+            <p class="price">500 руб.</p>
+            <button onclick="window.location.href='screwdriver.html'">Открыть</button>
+        </div>
+
+        <div class="product-card">
+            <div class="slider">
+
+                <div class="prev" onclick="changeSlide(2,-1)">&#10094;</div>
+                <div class="next" onclick="changeSlide(2,1)">&#10095;</div>
+
+                <div class="slides" id="slides-2">
+
+                    <div class="slide">
+                        <img src="png/4.webp" alt="Фото1" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/5.webp" alt="Фото2" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/6.webp" alt="Фото3" />
+                    </div>
+
+                </div>
+            </div>
+            <h3>Мультиметр</h3>
+            <p class="price">1500 руб.</p>
+            <button onclick="window.location.href='multimeter.html'">Открыть</button>
+        </div>
+
+        <div class="product-card">
+            <div class="slider">
+
+                <div class="prev" onclick="changeSlide(3,-1)">&#10094;</div>
+                <div class="next" onclick="changeSlide(3,1)">&#10095;</div>
+
+                <div class="slides" id="slides-3">
+
+                    <div class="slide">
+                        <img src="png/7.webp" alt="Фото1" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/8.webp" alt="Фото2" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/9.webp" alt="Фото3" />
+                    </div>
+
+                </div>
+            </div>
+            <h3>Паяльник</h3>
+            <p class="price">2000 руб.</p>
+            <button onclick="window.location.href='soldering.html'">Открыть</button>
+        </div>
+
+        <div class="product-card">
+            <div class="slider">
+
+                <div class="prev" onclick="changeSlide(4,-1)">&#10094;</div>
+                <div class="next" onclick="changeSlide(4,1)">&#10095;</div>
+
+                <div class="slides" id="slides-4">
+
+                    <div class="slide">
+                        <img src="png/10.webp" alt="Фото1" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/11.webp" alt="Фото2" />
+                    </div>
+
+                    <div class="slide">
+                        <img src="png/12.webp" alt="Фото3" />
+                    </div>
+
+                </div>
+            </div>
+            <h3>Блок питания</h3>
+            <p class="price">3000 руб.</p>
+            <button onclick="window.location.href='power_unit.html'">Открыть</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const slideIndices = [0,0,0,0,0];
+
+    function changeSlide(cardIndex,direction) {
+        const slidesContainer = document.getElementById('slides-' + cardIndex);
+        const totalSlides = slidesContainer.children.length;
+
+        // Обновляем индекс
+        slideIndices[cardIndex] += direction;
+
+        if (slideIndices[cardIndex] >= totalSlides) {
+            slideIndices[cardIndex] = 0;
+        }
+        if (slideIndices[cardIndex] <0) {
+            slideIndices[cardIndex] = totalSlides -1;
+        }
+
+        slidesContainer.style.transform = 'translateX(' + (-slideIndices[cardIndex]*100) + '%)';
+    }
+</script>
+
+<section id="about" class="about">
+    <h2>О нас</h2>
+    <p>Мы — команда профессионалов, предлагающая качественные инструменты и электрооборудование для электриков и домашних мастеров.</p>
+</section>
+
+<section id="contacts" class="contacts">
+    <h2>Контакты</h2>
+    <p>Email: info@electromagazin.ru</p>
+    <p>Телефон: +7 (123) 456-78-90</p>
+    <p>Адрес: г. Москва, ул. Электриков, д. 10</p>
+</section>
+
+<footer>
+    &copy; 2025 ЭлектроМагазин. Все права защищены.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="cart.css" />
+</head>
+<header>
+    <h1>Ваша корзина</h1>
+    <nav>
+        <ul>
+            <li><a href="checkout.html">Оформить заказ</a></li>
+            <li><a href="index.html">Продолжить покупки</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+<table>
+    <tr>
+        <th>Товар</th>
+        <th>Цена за шт.</th>
+        <th>Количество</th>
+        <th>Общая цена</th>
+        <th>Действия</th>
+    </tr>
+
+    <tr>
+        <td>Отвертка электрическая</td>
+        <td>500 ₽</td>
+        <td>2</td>
+        <td>1000 ₽</td>
+        <td><a class="button">Удалить</a></td>
+    </tr>
+
+    <tr>
+        <td>Паяльник</td>
+        <td>2000 ₽</td>
+        <td>1</td>
+        <td>2000 ₽</td>
+        <td><a class="button">Удалить</a></td>
+    </tr>
+
+    <tr>
+        <td colspan="3" style="text-align:right; font-weight:bold;">Итого:</td>
+        <td colspan="2" style="text-align:left;">3000 ₽</td>
+    </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="product.css" />
+    <title>Отвертка электическая</title>
+</head>
+<body>
+<header>
+    <h1>Фиксикс</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Назад</a></li>
+            <li><a href="register.html" class="register">Зарегистрироваться</a></li>
+            <li><a href="login.html" class="login">Войти</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+
+    <div class="slider">
+
+
+        <div class="prev" onclick="changeSlide(1,-1)">&#10094;</div>
+        <div class="next" onclick="changeSlide(1,1)">&#10095;</div>
+
+
+        <div class="slides" id="slides-1">
+
+            <div class="slide">
+                <img src="png/4.webp" alt="Фото1" />
+            </div>
+
+            <div class="slide">
+                <img src="png/5.webp" alt="Фото2" />
+            </div>
+
+            <div class="slide">
+                <img src="png/6.webp" alt="Фото3" />
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="details-section">
+        <div>
+            <h1 class="product-title">Мультиметр</h1>
+            <div class="product-price">₽1,500</div>
+            <p class="product-description">
+                Мультиметр Цифровой с прозвонкой TESMEN TSM-192 измерительный тестер электрический
+            </p>
+            <p class="product-description">
+                Функции:
+                Определение места повреждения кабеля, Измерение напряжения переменного тока, Измерение напряжения постоянного тока, Измерение переменного напряжения, Измерение постоянного напряжения, Измерение сопротивления, Выявление повреждения проводки, Измерение непрерывности цепи, Проверка работоспособности диодов и транзисторов
+            </p>
+        </div>
+        <button class="add-to-cart-btn">Добавить в корзину</button>
+        <div class="reviews-block">
+            <h3>Отзывы</h3>
+            <div class="review">
+                <p><strong>Александр:</strong> Отличный товар!</p>
+            </div>
+            <div class="review">
+                <p><strong>Владимир:</strong> Мультиметр очень понравился, минус что нет кейса для хранения!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const slideIndices = [0,0,0,0,0];
+
+    function changeSlide(cardIndex,direction) {
+        const slidesContainer = document.getElementById('slides-' + cardIndex);
+        const totalSlides = slidesContainer.children.length;
+
+        slideIndices[cardIndex] += direction;
+
+        if (slideIndices[cardIndex] >= totalSlides) {
+            slideIndices[cardIndex] = 0;
+        }
+        if (slideIndices[cardIndex] <0) {
+            slideIndices[cardIndex] = totalSlides -1;
+        }
+
+        slidesContainer.style.transform = 'translateX(' + (-slideIndices[cardIndex]*100) + '%)';
+    }
+</script>
+</body>
+</html>

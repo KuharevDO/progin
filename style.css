@@ -1,0 +1,198 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Шапка сайта */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Шапка секция */
+.hero {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h2 {
+    margin-top: 0;
+}
+
+/* Каталог товаров */
+.products {
+    padding: 40px 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: calc(25% - 20px);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 1.2em;
+    color:#333;
+}
+button {
+    background-color:#007BFF;
+    color:#fff;
+    border:none;
+    padding:.5em 1em;
+    border-radius:.3em;
+    cursor:pointer;
+    margin-top:.5em;
+}
+button:hover {
+    background-color:#0056b3;
+}
+
+/* О нас и контакты */
+.about, .contacts {
+    background-color:#fff;
+    padding:30px;
+    margin-top:-10px; /* чуть приподнимаем */
+}
+.about h2, .contacts h2 {
+    margin-top:auto;
+}
+.about p, .contacts p {
+    max-width:max-content;
+}
+
+/* Подвал сайта */
+footer {
+    background-color:#333;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    margin-top:auto;
+}
+
+/* картчока перелистывания */
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Перелистывание */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Картинки */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Стрелки */
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    font-size: 24px;
+    z-index: 10;
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+.register {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.login{
+    position: absolute;
+    top: 20px;
+    right: 185px;
+    z-index: 10;
+}
